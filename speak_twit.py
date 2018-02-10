@@ -2,7 +2,7 @@
 
 import os
 import twitter
-from gtts import gTTS
+# from gtts import gTTS
 
 api = twitter.Api(consumer_key='7r2eXtOYae9rh73hntdmykKa7',
   consumer_secret='SiMKTMFvwTZDcwbBstzggOprAE2LNMblN8PIn9PmSONJNseQg0',
@@ -12,7 +12,7 @@ api = twitter.Api(consumer_key='7r2eXtOYae9rh73hntdmykKa7',
 statuses = api.GetUserTimeline(screen_name='Beyonce') # user id
 message_00 = statuses[0].text
 
-tts = gTTS(text=message_00, lang='ja', slow=False)
-tts.save("message_00.mp3")
+# tts = gTTS(text=message_00, lang='ja', slow=False)
+# tts.save("message_00.mp3")
 # os.system("say hello")
-os.system("mpg321 message_00.mp3")
+# os.system("mpg321 message_00.mp3")
