@@ -2,6 +2,7 @@ import tweepy
 import random
 from flask import Flask
 from flask import jsonify
+from flask import request
 
 # Twitter Authentication
 authentication = tweepy.OAuthHandler(
@@ -26,6 +27,11 @@ def trends():
     trends = api.trends_available()
     finalTrends = random.sample(trends, 10)
     return jsonify(finalTrends)
+
+@app.route('/api/tweets', methods=['GET'])
+def tweets():
+    tweets = api.trends_place(request.args.get('id', ''))
+    return jsonify(tweets)
 
 if __name__ == '__main__':
     app.run()
