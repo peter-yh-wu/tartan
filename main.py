@@ -20,7 +20,7 @@ app = Flask(__name__)
 
 @app.route('/')
 def hello():
-    return 'Hello'
+    return 'Hello!'
 
 @app.route('/api/trends', methods=['GET'])
 def trends():
