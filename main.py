@@ -17,6 +17,10 @@ api = tweepy.API(authentication)
 # Starting Flask
 app = Flask(__name__)
 
+@app.router('/')
+def hello():
+    return 'Hello'
+
 @app.route('/api/trends')
 def trends():
     '''
