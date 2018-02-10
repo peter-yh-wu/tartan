@@ -22,6 +22,10 @@ app = Flask(__name__)
 def hello():
     return 'Hello!'
 
+@app.route('/api/speak',gethods=['GET'])
+def speak():
+    return 'Hi!'
+
 @app.route('/api/trends', methods=['GET'])
 def trends():
     trends = api.trends_available()
